@@ -1,0 +1,53 @@
+@use "sass:map";
+
+$themes: (
+  "light": (
+    primary: #141619,
+    secondary: #a1e0eb,
+    drawer-l: #1f262d,
+    grey-color: #a5a8ab,
+    accent: #ed2426,
+    dark: #1d1d1d,
+    positive: #3dbc4a,
+    negative: #e93c3c,
+    info: #31ccec,
+    warning: #f2c037,
+    header: #282828,
+    background: #212121,
+    grey-box: #313131,
+    font: #fdfdfd,
+  ),
+  "dark": (
+    primary: #ed2426,
+    secondary: #26a69a,
+    accent: #9c27b0,
+    dark: #1d1d1d,
+    positive: #3dbc4a,
+    negative: #e93c3c,
+    info: #31ccec,
+    warning: #f2c037,
+    header: #282828,
+    background: #212121,
+    grey-box: #313131,
+    font: #fdfdfd,
+  ),
+);
+
+@each $theme, $colors in $themes {
+  .body--#{$theme} {
+    @each $name, $color in $colors {
+      .bg-#{$name} {
+        background: $color !important;
+      }
+      .text-#{$name} {
+        color: $color !important;
+      }
+    }
+
+    // quasar component overrides
+    .q-field__control,
+    .q-item--active {
+      color: map.get($colors, primary) !important;
+    }
+  }
+}

@@ -1,35 +1,35 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+  <q-layout view="hHh lpR lFr">
+    <q-header elevated class="bg-primary text-white">
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
+        <q-btn flat dense round aria-label="Menu" @click="toggleLeftDrawer">
+          <q-avatar size="30px">
+            <img src="../assets/logo.png" />
+          </q-avatar>
+        </q-btn>
 
         <q-toolbar-title>
-          <q-img
-            src="../assets/logo.png"
-            style="height: 35px; max-width: 30px"
-          />
-
           <q-img
             class="q-mx-xs"
             src="../assets/logo_text.png"
             style="height: 36px; max-width: 152px"
           />
         </q-toolbar-title>
+        <q-btn dense flat round icon="mdi-bell" class="q-mx-md" />
+        <q-btn dense flat round class="q-mr-md" @click="toggleRightDrawer">
+          <q-avatar size="30px">
+            <img src="../assets/ico-perfil.png" />
+          </q-avatar>
+        </q-btn>
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
-      <q-list>
-        <q-item-label header> Essential Links </q-item-label>
-
+    <q-drawer
+      class="bg-drawer-l text-secondary"
+      v-model="leftDrawerOpen"
+      show-if-above
+    >
+      <q-list class="q-mt-md">
         <EssentialLink
           v-for="link in essentialLinks"
           :key="link.title"
@@ -38,9 +38,27 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container>
+    <q-drawer
+      class="bg-drawer-l text-secondary"
+      v-model="rightDrawerOpen"
+      side="right"
+      elevated
+    >
+    </q-drawer>
+
+    <q-page-container class="bg-teal-1">
       <router-view />
     </q-page-container>
+
+    <q-footer class="bg-teal-2 text-black">
+      <q-toolbar>
+        <q-toolbar-title>
+          <div class="text-center text-subtitle2">
+            All Rights Reserved by Redação CDD.
+          </div>
+        </q-toolbar-title>
+      </q-toolbar>
+    </q-footer>
   </q-layout>
 </template>
 
@@ -50,46 +68,39 @@ import EssentialLink from "components/EssentialLink.vue";
 
 const linksList = [
   {
-    title: "Docs",
-    caption: "quasar.dev",
-    icon: "school",
-    link: "https://quasar.dev",
+    title: "Dashboard",
+    icon: "mdi-view-dashboard",
+    route: { nome: "home" },
   },
   {
-    title: "Github",
-    caption: "github.com/quasarframework",
-    icon: "code",
-    link: "https://github.com/quasarframework",
+    title: "Matérias",
+    icon: "mdi-post",
   },
   {
-    title: "Discord Chat Channel",
-    caption: "chat.quasar.dev",
-    icon: "chat",
-    link: "https://chat.quasar.dev",
+    title: "Financeiro",
+    icon: "mdi-cash",
+  },
+
+  {
+    title: "Suporte",
+    icon: "mdi-face-agent",
+  },
+
+  {
+    title: "Usuario",
+    icon: "mdi-account-group",
   },
   {
-    title: "Forum",
-    caption: "forum.quasar.dev",
-    icon: "record_voice_over",
-    link: "https://forum.quasar.dev",
+    title: "F.A.Q",
+    icon: "mdi-frequently-asked-questions",
   },
   {
-    title: "Twitter",
-    caption: "@quasarframework",
-    icon: "rss_feed",
-    link: "https://twitter.quasar.dev",
+    title: "Videos",
+    icon: "mdi-video",
   },
   {
-    title: "Facebook",
-    caption: "@QuasarFramework",
-    icon: "public",
-    link: "https://facebook.quasar.dev",
-  },
-  {
-    title: "Quasar Awesome",
-    caption: "Community Quasar projects",
-    icon: "favorite",
-    link: "https://awesome.quasar.dev",
+    title: "Avisos",
+    icon: "mdi-message-alert",
   },
 ];
 
@@ -102,12 +113,18 @@ export default defineComponent({
 
   setup() {
     const leftDrawerOpen = ref(false);
+    const rightDrawerOpen = ref(false);
 
     return {
       essentialLinks: linksList,
       leftDrawerOpen,
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value;
+      },
+
+      rightDrawerOpen,
+      toggleRightDrawer() {
+        rightDrawerOpen.value = !rightDrawerOpen.value;
       },
     };
   },

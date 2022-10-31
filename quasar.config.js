@@ -30,12 +30,12 @@ module.exports = configure(function (/* ctx */) {
     boot: ["axios"],
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#css
-    css: ["app.css"],
+    css: ["app.scss"],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
     extras: [
       // 'ionicons-v4',
-      // 'mdi-v5',
+      "mdi-v5",
       // 'fontawesome-v6',
       // 'eva-icons',
       // 'themify',
@@ -85,7 +85,19 @@ module.exports = configure(function (/* ctx */) {
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
     framework: {
-      config: {},
+      config: {
+        // brand: {
+        //   primary: "#141619",
+        //   secondary: "#26A69A",
+        //   accent: "#9C27B0",
+        //   dark: "#1d1d1d",
+        //   "dark-page": "#121212",
+        //   positive: "#21BA45",
+        //   negative: "#C10015",
+        //   info: "#31CCEC",
+        //   warning: "#F2C037",
+        // },
+      },
 
       // iconSet: 'material-icons', // Quasar icon set
       // lang: 'en-US', // Quasar language pack
