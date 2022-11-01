@@ -2,7 +2,7 @@
   "name": "redacao-vue",
   "version": "0.0.1",
   "description": "A Quasar Project",
-  "productName": "Redacao em vue 3",
+  "productName": "Redação CDD",
   "author": "Bruno Boschi",
   "private": true,
   "scripts": {

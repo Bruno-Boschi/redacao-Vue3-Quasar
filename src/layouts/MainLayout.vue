@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="hHh lpR lFr">
+  <q-layout view="hHh lpR fFf">
     <q-header elevated class="bg-primary text-white">
       <q-toolbar>
         <q-btn flat dense round aria-label="Menu" @click="toggleLeftDrawer">
@@ -36,6 +36,11 @@
           v-bind="link"
         />
       </q-list>
+      <div
+        class="fixed-bottom text-center q-pb-sm text-weight-bold text-teal-8"
+      >
+        © REDAÇÃO CDD
+      </div>
     </q-drawer>
 
     <q-drawer
@@ -44,13 +49,26 @@
       side="right"
       elevated
     >
+      <q-img
+        class="absolute-top"
+        src="https://cdn.quasar.dev/img/material.png"
+        style="height: 150px"
+      >
+        <div class="absolute-bottom bg-transparent">
+          <q-avatar size="56px" class="q-mb-sm">
+            <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
+          </q-avatar>
+          <div class="text-weight-bold">Administrador</div>
+          <div>Admin@admin</div>
+        </div>
+      </q-img>
     </q-drawer>
 
     <q-page-container class="bg-teal-1">
       <router-view />
     </q-page-container>
 
-    <q-footer class="bg-teal-2 text-black">
+    <!-- <q-footer class="bg-teal-2 text-black">
       <q-toolbar>
         <q-toolbar-title>
           <div class="text-center text-subtitle2">
@@ -58,7 +76,7 @@
           </div>
         </q-toolbar-title>
       </q-toolbar>
-    </q-footer>
+    </q-footer> -->
   </q-layout>
 </template>
 
