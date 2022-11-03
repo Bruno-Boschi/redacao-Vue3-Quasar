@@ -30,11 +30,12 @@
       show-if-above
     >
       <q-list class="q-mt-md">
-        <EssentialLink
+        <!-- <EssentialLink
           v-for="link in essentialLinks"
           :key="link.title"
           v-bind="link"
-        />
+        /> -->
+        <EssentialLink />
       </q-list>
       <div
         class="fixed-bottom text-center q-pb-sm text-weight-bold text-teal-8"
@@ -82,7 +83,7 @@
 
 <script>
 import { defineComponent, ref } from "vue";
-import EssentialLink from "components/EssentialLink.vue";
+import EssentialLink from "src/components/EssentialLink.vue";
 
 const linksList = [
   {

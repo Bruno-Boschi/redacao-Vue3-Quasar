@@ -1,11 +1,11 @@
 <template>
-  <q-page class="flex flex-center"> Postadas </q-page>
+  <q-page class="flex flex-center"> Publishers </q-page>
 </template>
 
 <script>
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "PostadasPage",
+  name: "PublishersPage",
 });
 </script>
