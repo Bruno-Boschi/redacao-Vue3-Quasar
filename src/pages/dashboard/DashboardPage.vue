@@ -37,14 +37,15 @@
       <div class="row q-pt-lg">
         <div class="col-6">
           <q-card>
-            <q-card-section> DEMANDAS </q-card-section>
+            <q-card-section class="bg-teste text-white">
+              DEMANDAS
+            </q-card-section>
 
             <q-markup-table>
               <thead>
                 <tr>
                   <th class="text-left">Assunto</th>
                   <th class="text-right">Redator</th>
-                  <th class="text-right">Categoria</th>
                   <th class="text-right">Idioma</th>
                   <th class="text-right">Status</th>
                 </tr>
@@ -53,35 +54,30 @@
                 <tr>
                   <td class="text-left">Teste</td>
                   <td class="text-right">Redacao</td>
-                  <td class="text-right">Aplicativos</td>
                   <td class="text-right">Portugues</td>
                   <td class="text-right">Finalizado</td>
                 </tr>
                 <tr>
                   <td class="text-left">Ratrear Telefone</td>
                   <td class="text-right">paula</td>
-                  <td class="text-right">Antonio</td>
                   <td class="text-right">Espanhol</td>
                   <td class="text-right">Aguardando</td>
                 </tr>
                 <tr>
                   <td class="text-left">PASEP</td>
                   <td class="text-right">Antonio</td>
-                  <td class="text-right">Beneficios Governamentais</td>
                   <td class="text-right">Portuguess</td>
                   <td class="text-right">Aguardando</td>
                 </tr>
                 <tr>
                   <td class="text-left">Envelhecer na foto</td>
                   <td class="text-right">Paula</td>
-                  <td class="text-right">Aplicativos</td>
                   <td class="text-right">Francês</td>
                   <td class="text-right">Aguardando</td>
                 </tr>
                 <tr>
                   <td class="text-left">Assistir futebol online</td>
                   <td class="text-right">Paula</td>
-                  <td class="text-right">Aplicativos</td>
                   <td class="text-right">Francês</td>
                   <td class="text-right">Aguardando</td>
                 </tr>
@@ -91,7 +87,9 @@
         </div>
         <div class="q-pl-md col-6">
           <q-card>
-            <q-card-section> Ranking</q-card-section>
+            <q-card-section class="bg-teste text-white">
+              Ranking</q-card-section
+            >
 
             <q-markup-table>
               <thead>
@@ -147,7 +145,9 @@
 
       <div class="q-pt-md">
         <q-card>
-          <q-card-section> CHAMADOS </q-card-section>
+          <q-card-section class="bg-teste text-white">
+            CHAMADOS
+          </q-card-section>
           <q-markup-table>
             <thead>
               <tr>
